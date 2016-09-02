@@ -1,4 +1,4 @@
-package stochproc;
+package ammon.thilo.app.stochproc;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -32,7 +32,7 @@ class RandomWalkFrame extends Stage{
       
       @Override
       public void handle(ActionEvent e){
-        
+
       }
     });
 

@@ -1,4 +1,4 @@
-package stochproc;
+package ammon.thilo.app.stochproc;
 
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.XYChart;

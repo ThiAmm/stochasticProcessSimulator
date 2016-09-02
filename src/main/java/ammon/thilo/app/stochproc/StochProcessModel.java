@@ -1,4 +1,4 @@
-package stochproc;
+package ammon.thilo.app.stochproc;
 
 import java.util.TreeMap;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ class StochProcessModel{
    *                  space of the stochastic process
    **/
   StochProcessModel(int dimension) {
-    realisations = new TreeMap<Double,ArrayList<Double>>();
+    realisations = new TreeMap<>();
     this.dimension = dimension; 
   }
 
@@ -38,5 +38,9 @@ class StochProcessModel{
 
   ArrayList<Double> getRealisationAtTime(double t) {
     return realisations.get(t);
+  }
+
+  public void createMarkovProcess(int dim){
+    MarkovProcessModel mpm = new MarkovProcessModel(dim);
   }
 }

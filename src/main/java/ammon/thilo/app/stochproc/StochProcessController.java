@@ -1,4 +1,4 @@
-package stochproc;
+package ammon.thilo.app.stochproc;
 
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.LineChart;
@@ -21,8 +21,7 @@ public class StochProcessController{
   }
 
   public void createMarkovProcess(){
-    spmodel.createMarkovProcess();
-    
+    spmodel.createMarkovProcess(2);//ToDo: User decide
   }
 
   public void showRandomWalkFrame(){
