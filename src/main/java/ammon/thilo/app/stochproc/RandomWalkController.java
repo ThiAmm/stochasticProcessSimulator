@@ -13,19 +13,13 @@ import static java.lang.Double.compare;
  */
 public class RandomWalkController implements StochProcessController{
     RandomWalkModel rm = null;
-    RandomWalkFrame rmview = null;
     double currentValue = 0;
     ArrayList<Pair<Double,ArrayList<Double>>> newRealisedValues;
 
     public RandomWalkController() {
         super();
         rm = new RandomWalkModel(1);
-        rmview = new RandomWalkFrame(this);
         newRealisedValues = new ArrayList<Pair<Double,ArrayList<Double>>>();
-    }
-
-    public void createRandomWalk(){
-        rmview.show();
     }
 
     public void setJumpsProbsPair(ArrayList<Double> jumps, ArrayList<Double> probs) {

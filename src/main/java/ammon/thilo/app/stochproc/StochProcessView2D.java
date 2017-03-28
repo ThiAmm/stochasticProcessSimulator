@@ -13,6 +13,7 @@ class StochProcessView2D extends LineChart<Number,Number>{
   
   StochProcessView2D(NumberAxis x, NumberAxis y){
     super(x,y);
+    this.setCreateSymbols(false);
   }
 
   public void add2DDataSeries(String name, ArrayList<RealisedValue> realisedValues) {

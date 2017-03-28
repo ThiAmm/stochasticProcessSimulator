@@ -51,6 +51,7 @@ public class StochProcessesController {
                         for(final Pair<Double,ArrayList<Double>> newRealisedValue : stochasticProcessController.getNewRealisedValues()){
                             Platform.runLater(new Runnable() {
                                 public void run() {
+                                    System.out.println("HIer");
                                     series.getData().add(
                                             new XYChart.Data<Number,Number>(newRealisedValue.getKey(),newRealisedValue.getValue().get(0))
                                     );
