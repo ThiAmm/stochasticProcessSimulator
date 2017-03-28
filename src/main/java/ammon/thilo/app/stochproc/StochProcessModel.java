@@ -3,44 +3,27 @@ package ammon.thilo.app.stochproc;
 import java.util.TreeMap;
 import java.util.ArrayList;
 
-class StochProcessModel{
-  int dimension;
-  TreeMap<Double,ArrayList<Double>> realisations;
+class StochProcessModel {
+    int dimension;
+    ArrayList<RealisedValue> realisations;
 
-  /**
-   * @param dimension The dimension of the range 
-   *                  space of the stochastic process
-   **/
-  StochProcessModel(int dimension) {
-    realisations = new TreeMap<>();
-    this.dimension = dimension; 
-  }
-
-  /**
-   * The number of realisations of the path of the process.
-   **/
-  public int getNmbOfRealisations() {
-    return realisations.size();
-  }
-
-  /**
-   * Adds y to the list of realisations and t to the list of timeRealisations
-   **/
-  private void addRealisation(double t, ArrayList<Double> y) {
-    if(!realisations.isEmpty() && realisations.lastKey()<=t){
-      throw new IllegalArgumentException("Cannot add new realisation: time value smaller than existing time value");
+    StochProcessModel(int dimension) {
+        realisations = new ArrayList<RealisedValue>();
+        this.dimension = dimension;
     }
-    if(dimension != y.size()){
-      throw new IllegalArgumentException("Dimension missmatch");
+
+    public int getNmbOfRealisations() {
+        return realisations.size();
     }
-    realisations.put(t,y);
-  }
 
-  ArrayList<Double> getRealisationAtTime(double t) {
-    return realisations.get(t);
-  }
+    public void addRealisation(double t, ArrayList<Double> y) {
+        if (dimension != y.size()) {
+            throw new IllegalArgumentException("Dimension mismatch");
+        }
+        realisations.add(new RealisedValue(t, y));
+    }
 
-  public void createMarkovProcess(int dim){
-    MarkovProcessModel mpm = new MarkovProcessModel(dim);
-  }
+    public ArrayList<RealisedValue> getRealisations(){
+        return realisations;
+    }
 }

@@ -1,30 +1,16 @@
 package ammon.thilo.app.stochproc;
 
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.LineChart;
+import java.util.ArrayList;
 
-public class StochProcessController{
-  StochProcessView2D spview = null;
-  StochProcessModel spmodel = null;
+/**
+ * Created by thilo on 07.09.16.
+ */
+public interface StochProcessController {
+    public void simulateNextPoint(double time);
 
-  RandomWalkFrame rndwlkFrame = null;
-  
-  public StochProcessController(int dimension){
-    spview = new StochProcessView2D(new NumberAxis(),new NumberAxis());
-    spmodel = new StochProcessModel(dimension);
-  
-    rndwlkFrame = new RandomWalkFrame();
-  }
-  
-  public LineChart getCoorSys(){
-    return spview;
-  }
+    public ArrayList<RealisedValue> getRealisedValues();
 
-  public void createMarkovProcess(){
-    spmodel.createMarkovProcess(2);//ToDo: User decide
-  }
+    public String getTypeNameOfStochasticProcess();
 
-  public void showRandomWalkFrame(){
-    rndwlkFrame.show();
-  }
+    boolean IsRealValuedProcess();
 }

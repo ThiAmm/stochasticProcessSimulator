@@ -1,25 +1,35 @@
 package ammon.thilo.app.stochproc;
 
-import javafx.scene.chart.Axis;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.LineChart;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
-class StochProcessView2D extends LineChart{
+class StochProcessView2D extends LineChart<Number,Number>{
   
-  StochProcessView2D(Axis x, Axis y){
+  StochProcessView2D(NumberAxis x, NumberAxis y){
     super(x,y);
   }
 
-  public void addDataSeries(String name, HashMap<Double,Double> pnts){
-    XYChart.Series series = new XYChart.Series();
+  public void add2DDataSeries(String name, ArrayList<RealisedValue> realisedValues){
+    final XYChart.Series series = new XYChart.Series();
     series.setName(name);
 
-    for(double xval : pnts.keySet()){
-      double yval = pnts.get(xval);
-      series.getData().add(new XYChart.Data(xval,yval));
+    for(int i = 0; i< realisedValues.size(); i++) {
+      series.getData().add(new XYChart.Data(realisedValues.get(i).getTime(), realisedValues.get(i).getValue().get(0)));
+      if (i < realisedValues.size()-1) {
+        series.getData().add(new XYChart.Data(realisedValues.get(i+1).getTime() - Double.MIN_VALUE, realisedValues.get(i).getValue().get(0)));
+      }
     }
-    this.getData().addAll(series);  
+    final ObservableList<Series<Number,Number>> data = this.getData();
+    Platform.runLater(new Runnable() {
+      public void run() {
+        data.addAll(series);
+      }
+    });
   }
 }

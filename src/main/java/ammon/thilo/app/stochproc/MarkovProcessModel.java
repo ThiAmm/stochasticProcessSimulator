@@ -1,8 +1,8 @@
 package ammon.thilo.app.stochproc;
-class MarkovProcessModel extends StochProcessModel{
 
-  MarkovProcessModel(int dimension){
-    super(dimension);
-  }
+class MarkovProcessModel extends StochProcessModel {
+    MarkovProcessModel(int dimension) {
+        super(dimension);
+    }
 }
 

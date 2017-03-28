@@ -1,8 +1,22 @@
 package ammon.thilo.app.stochproc;
 
-class RandomWalkModel {//extends MarkovProcessModel{
-  //RandomWalkKernel randKer;
-  //RandowmWalkModel(RandomWalkKernel k){
-  //  this.k = k;
-  //}
+import javafx.util.Pair;
+
+import java.util.ArrayList;
+
+class RandomWalkModel extends StochProcessModel{
+    int dimension;
+    ArrayList<Pair<Double,Double>> jumpProbPairs;
+    RandomWalkModel(int dimension) {
+        super(dimension);
+        this.dimension = dimension;
+    }
+
+    public void setJumpProbPairs(ArrayList<Pair<Double,Double>> jumpProbPairs) {
+        this.jumpProbPairs = jumpProbPairs;
+    }
+
+    public ArrayList<Pair<Double,Double>> getJumpProbPairs(){
+        return jumpProbPairs;
+    }
 }
