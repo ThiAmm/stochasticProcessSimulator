@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22732235-0fcf-4fc6-a7f6-6fc2fdcef326" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/Simulation/SimulationRunnable.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$2.class" afterPath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$3.class" afterPath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$4.class" afterPath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App.class" afterPath="$PROJECT_DIR$/target/classes/ammon/thilo/app/App.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/stochproc/StochProcessesController$1.class" afterPath="$PROJECT_DIR$/target/classes/ammon/thilo/app/stochproc/StochProcessesController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ammon/thilo/app/stochproc/StochProcessesController.class" afterPath="$PROJECT_DIR$/target/classes/ammon/thilo/app/stochproc/StochProcessesController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkFrame.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessView2D.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessView2D.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessesController.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessesController.java" />
     </list>
     <ignored path="stoch-process-app.iws" />
@@ -104,24 +103,24 @@
       <file leaf-file-name="StochProcessesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="53" column="63" lean-forward="false" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+            <state relative-caret-position="196">
+              <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#856#857#0" expanded="true" />
                 <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#1977#2408#0" expanded="true" />
-                <element signature="e#2407#2408#0" expanded="true" />
+                <element signature="e#1977#2344#0" expanded="true" />
+                <element signature="e#2343#2344#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimulationRunnable.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SimulationRunnable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+            <state relative-caret-position="522">
+              <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -160,16 +159,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+            <state relative-caret-position="213">
+              <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1532#1664#0" expanded="true" />
                 <element signature="e#1663#1664#0" expanded="true" />
-                <element signature="e#1804#1967#0" expanded="true" />
                 <element signature="e#1966#1967#0" expanded="true" />
                 <element signature="e#2119#2281#0" expanded="true" />
                 <element signature="e#2280#2281#0" expanded="true" />
@@ -208,6 +206,7 @@
       <find>new RandomWalkFrame</find>
       <find>rmview</find>
       <find>tfprbs</find>
+      <find>Stochastic pro</find>
       <find>my p</find>
     </findStrings>
   </component>
@@ -256,9 +255,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessView2D.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" />
       </list>
     </option>
   </component>
@@ -884,25 +883,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.38474295" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.37810946" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.58208954" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.58872306" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.41791046" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.41127694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.49585405" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3090105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.49143174" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.48922056" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -979,19 +978,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java</url>
-          <line>35</line>
+          <line>36</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java</url>
-          <line>25</line>
+          <line>26</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessesController.java</url>
-          <line>54</line>
+          <line>53</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
@@ -1328,41 +1327,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="53" column="63" lean-forward="false" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
+        <state relative-caret-position="196">
+          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#856#857#0" expanded="true" />
             <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#1977#2408#0" expanded="true" />
-            <element signature="e#2407#2408#0" expanded="true" />
+            <element signature="e#1977#2344#0" expanded="true" />
+            <element signature="e#2343#2344#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+        <state relative-caret-position="213">
+          <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1532#1664#0" expanded="true" />
             <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1804#1967#0" expanded="true" />
             <element signature="e#1966#1967#0" expanded="true" />
             <element signature="e#2119#2281#0" expanded="true" />
             <element signature="e#2280#2281#0" expanded="true" />
             <element signature="e#2768#2905#0" expanded="true" />
             <element signature="e#2904#2905#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

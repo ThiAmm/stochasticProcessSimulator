@@ -20,7 +20,7 @@ public class StochProcessesController {
     }
 
     public LineChart getCoorSys() {
-        spview.setTitle("Realisation of added stochastic Processes");
+        spview.setTitle("Realisation of added stochastic processes");
         return spview;
     }
 
@@ -51,7 +51,6 @@ public class StochProcessesController {
                         for(final Pair<Double,ArrayList<Double>> newRealisedValue : stochasticProcessController.getNewRealisedValues()){
                             Platform.runLater(new Runnable() {
                                 public void run() {
-                                    System.out.println("HIer");
                                     series.getData().add(
                                             new XYChart.Data<Number,Number>(newRealisedValue.getKey(),newRealisedValue.getValue().get(0))
                                     );

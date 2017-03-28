@@ -12,7 +12,7 @@ public class SimulationRunnable implements Runnable {
     double timeBetweenNewSimulationPoint;
     private static final int DELAYBETWEENVIEWUPDATESIMULATION = 500;
     double time = 0;
-    boolean simulationPause = false;
+    private boolean simulationPause = false;
     ArrayList<StochProcessController> spsCtrls = null;
     StochProcessesController stochasticprocessesctrl;
 
@@ -23,22 +23,32 @@ public class SimulationRunnable implements Runnable {
     }
 
     public void run() {
-        while (!simulationPause) {
-            for (StochProcessController spCtrl : spsCtrls) {
-                spCtrl.simulateNextPoint(time);
-            }
-            System.out.println("Simulation for time step done");
-            try {
-                Thread.sleep(DELAYBETWEENVIEWUPDATESIMULATION);
-            } catch (InterruptedException e) {
+        while(true) {
+            while (!simulationPause) {
+                for (StochProcessController spCtrl : spsCtrls) {
+                    spCtrl.simulateNextPoint(time);
+                }
+                System.out.println("Simulation for time step done");
+                try {
+                    Thread.sleep(DELAYBETWEENVIEWUPDATESIMULATION);
+                } catch (InterruptedException e) {
 
+                }
+                stochasticprocessesctrl.updateProcessesView(time);
+                time = time + timeBetweenNewSimulationPoint;
             }
-            stochasticprocessesctrl.updateProcessesView(time);
-            time = time + timeBetweenNewSimulationPoint;
+            try {
+                synchronized (this){
+                    wait();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void setSimulationActive(boolean active){
+    public synchronized void setSimulationActive(boolean active){
         simulationPause = !active;
+        notify();
     }
 }
