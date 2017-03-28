@@ -4,9 +4,7 @@ import ammon.thilo.app.HelperFunctions.ArrayHelperFunctions;
 import ammon.thilo.app.ProbabilityFactory.RandomNumberGenerator;
 import javafx.util.Pair;
 
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 import static java.lang.Double.compare;
 
@@ -17,11 +15,13 @@ public class RandomWalkController implements StochProcessController{
     RandomWalkModel rm = null;
     RandomWalkFrame rmview = null;
     double currentValue = 0;
+    ArrayList<Pair<Double,ArrayList<Double>>> newRealisedValues;
 
     public RandomWalkController() {
         super();
         rm = new RandomWalkModel(1);
         rmview = new RandomWalkFrame(this);
+        newRealisedValues = new ArrayList<Pair<Double,ArrayList<Double>>>();
     }
 
     public void createRandomWalk(){
@@ -48,10 +48,18 @@ public class RandomWalkController implements StochProcessController{
     }
 
     public void simulateNextPoint(double time){
-        double val = RandomNumberGenerator.generateDiscreteFiniteRandomVariable(
+        newRealisedValues.clear();
+        if(time != 0){
+            rm.addRealisation(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue));
+            newRealisedValues.add(new Pair(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
+        }
+
+        double jump = RandomNumberGenerator.generateDiscreteFiniteRandomVariable(
                 rm.getJumpProbPairs());
-        currentValue = currentValue + val;
+        currentValue = currentValue + jump;
+
         rm.addRealisation(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue));
+        newRealisedValues.add(new Pair(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
     }
 
     public ArrayList<RealisedValue> getRealisedValues(){
@@ -69,5 +77,17 @@ public class RandomWalkController implements StochProcessController{
             }
         }
         return true;
+    }
+
+    public void setId(int id){
+        rm.setId(id);
+    }
+
+    public int getId(){
+        return rm.getId();
+    }
+
+    public ArrayList<Pair<Double, ArrayList<Double>>> getNewRealisedValues() {
+        return newRealisedValues;
     }
 }

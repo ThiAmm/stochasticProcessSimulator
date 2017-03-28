@@ -7,6 +7,7 @@ import java.util.ArrayList;
 class RandomWalkModel extends StochProcessModel{
     int dimension;
     ArrayList<Pair<Double,Double>> jumpProbPairs;
+    int Id;
     RandomWalkModel(int dimension) {
         super(dimension);
         this.dimension = dimension;
@@ -18,5 +19,13 @@ class RandomWalkModel extends StochProcessModel{
 
     public ArrayList<Pair<Double,Double>> getJumpProbPairs(){
         return jumpProbPairs;
+    }
+
+    public int getId(){
+        return Id;
+    }
+
+    public void setId(int id){
+        Id = id;
     }
 }

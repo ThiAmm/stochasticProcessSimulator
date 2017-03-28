@@ -33,7 +33,7 @@ public class SimulationRunnable implements Runnable {
             }catch(InterruptedException e){
 
             }
-            stochasticprocessesctrl.updateProcessesView();
+            stochasticprocessesctrl.updateProcessesView(time);
             time  = time + timeBetweenNewSimulationPoint;
         }
     }

@@ -1,5 +1,7 @@
 package ammon.thilo.app.stochproc;
 
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 
 /**
@@ -13,4 +15,10 @@ public interface StochProcessController {
     public String getTypeNameOfStochasticProcess();
 
     boolean IsRealValuedProcess();
+
+    public void setId(int id);
+
+    public int getId();
+
+    ArrayList<Pair<Double, ArrayList<Double>>> getNewRealisedValues();
 }

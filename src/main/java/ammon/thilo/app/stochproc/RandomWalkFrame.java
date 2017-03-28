@@ -11,7 +11,6 @@ import javafx.geometry.Insets;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 class RandomWalkFrame extends Stage {
