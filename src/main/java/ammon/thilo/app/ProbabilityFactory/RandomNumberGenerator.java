@@ -25,11 +25,9 @@ public class RandomNumberGenerator {
         return generateUniformUnitRandomVariables(1).get(0);
     }
 
-    /**
-     * This method returns a sample of the random variables X
-     * with discrete finite state space.
-     * @return
-     */
+    public static double generateExponentialRandomVariable(int theta){
+        return -theta*Math.log(generateUniformUnitRandomVariable());
+    }
     public static double generateDiscreteFiniteRandomVariable(ArrayList<Pair<Double,Double>> valProbPairs){
         ArrayList<Double> distributionFunction = getFirstSumedValues(getValuesFromPairArrayList(valProbPairs));
         double randUniVar = generateUniformUnitRandomVariable();
