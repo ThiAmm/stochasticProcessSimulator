@@ -6,15 +6,15 @@ import java.util.ArrayList;
  * Created by thilo on 13.09.16.
  */
 public class StochProcessesModel {
-    ArrayList<StochProcessModel> spms = null;
+    ArrayList<StochasticProcessModel> spms = null;
     public StochProcessesModel(){
-        spms = new ArrayList<StochProcessModel>();
+        spms = new ArrayList<StochasticProcessModel>();
     }
-    public void add(StochProcessModel spm){
+    public void add(StochasticProcessModel spm){
         spms.add(spm);
     }
 
-    public ArrayList<StochProcessModel> getStochProcesses() {
+    public ArrayList<StochasticProcessModel> getStochProcesses() {
         return spms;
     }
 }
