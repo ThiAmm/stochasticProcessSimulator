@@ -20,5 +20,8 @@ public interface StochProcessController {
 
     public int getId();
 
-    ArrayList<Pair<Double, ArrayList<Double>>> getNewRealisedValues();
+    ArrayList<RealisedValue> getNewRealisedValues();
+
+    public void clearNewRealisedValues();
+
 }

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 /**
  * Created by thilo on 13.09.16.
  */
-public class StochProcessesModel {
+public class StochasticProcessesModel {
     ArrayList<StochasticProcessModel> spms = null;
-    public StochProcessesModel(){
+    public StochasticProcessesModel(){
         spms = new ArrayList<StochasticProcessModel>();
     }
     public void add(StochasticProcessModel spm){

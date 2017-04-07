@@ -1,16 +1,15 @@
 package ammon.thilo.app.stochproc;
 
 import java.util.ArrayList;
-
 /**
  * Created by thilo on 24.09.16.
  */
 public class State implements Comparable<State>{
     ArrayList<Double> value = null;
     int dimension;
-    State(ArrayList<Double> val){
-        this.value = val;
-        dimension = val.size();
+    State(ArrayList<Double> value){
+        this.value = value;
+        dimension = value.size();
     }
 
     ArrayList<Double> getValue(){
@@ -46,6 +45,6 @@ public class State implements Comparable<State>{
     }
 
     public boolean isGreater(State i) {
-        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not yet supported");
     }
 }

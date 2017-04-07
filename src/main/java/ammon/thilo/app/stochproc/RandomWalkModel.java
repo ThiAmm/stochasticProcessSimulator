@@ -4,7 +4,7 @@ import javafx.util.Pair;
 
 import java.util.ArrayList;
 
-class RandomWalkModel extends StochProcessModel{
+class RandomWalkModel extends StochasticProcessModel {
     int dimension;
     ArrayList<Pair<Double,Double>> jumpProbPairs;
     int Id;

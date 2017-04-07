@@ -28,6 +28,16 @@ public class RandomNumberGenerator {
     public static double generateExponentialRandomVariable(int theta){
         return -theta*Math.log(generateUniformUnitRandomVariable());
     }
+
+    public static double[] generateNormalRandomNumbersBoxMuller(){
+        double u1 = generateUniformUnitRandomVariable();
+        double u2 = generateUniformUnitRandomVariable();
+        double[] ret = new double[2];
+        ret[0] = Math.sqrt(-2*Math.log(u1))*Math.cos(2*Math.PI*u2);
+        ret[1] = Math.sqrt(-2*Math.log(u1))*Math.sin(2*Math.PI*u2);
+        return ret;
+    }
+
     public static double generateDiscreteFiniteRandomVariable(ArrayList<Pair<Double,Double>> valProbPairs){
         ArrayList<Double> distributionFunction = getFirstSumedValues(getValuesFromPairArrayList(valProbPairs));
         double randUniVar = generateUniformUnitRandomVariable();

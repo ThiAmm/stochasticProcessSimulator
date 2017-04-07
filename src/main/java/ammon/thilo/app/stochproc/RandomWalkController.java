@@ -14,12 +14,12 @@ import static java.lang.Double.compare;
 public class RandomWalkController implements StochProcessController{
     RandomWalkModel rm = null;
     double currentValue = 0;
-    ArrayList<Pair<Double,ArrayList<Double>>> newRealisedValues;
+    ArrayList<RealisedValue> newRealisedValues;
 
     public RandomWalkController() {
         super();
         rm = new RandomWalkModel(1);
-        newRealisedValues = new ArrayList<Pair<Double,ArrayList<Double>>>();
+        newRealisedValues = new ArrayList<RealisedValue>();
     }
 
     public void setJumpsProbsPair(ArrayList<Double> jumps, ArrayList<Double> probs) {
@@ -42,10 +42,9 @@ public class RandomWalkController implements StochProcessController{
     }
 
     public void simulateNextPoint(double time){
-        newRealisedValues.clear();
         if(time != 0){
             rm.addRealisation(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue));
-            newRealisedValues.add(new Pair(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
+            newRealisedValues.add(new RealisedValue(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
         }
 
         double jump = RandomNumberGenerator.generateDiscreteFiniteRandomVariable(
@@ -53,7 +52,11 @@ public class RandomWalkController implements StochProcessController{
         currentValue = currentValue + jump;
 
         rm.addRealisation(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue));
-        newRealisedValues.add(new Pair(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
+        newRealisedValues.add(new RealisedValue(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
+    }
+
+    public void clearNewRealisedValues(){
+        newRealisedValues.clear();
     }
 
     public ArrayList<RealisedValue> getRealisedValues(){
@@ -81,7 +84,7 @@ public class RandomWalkController implements StochProcessController{
         return rm.getId();
     }
 
-    public ArrayList<Pair<Double, ArrayList<Double>>> getNewRealisedValues() {
+    public ArrayList<RealisedValue> getNewRealisedValues() {
         return newRealisedValues;
     }
 }

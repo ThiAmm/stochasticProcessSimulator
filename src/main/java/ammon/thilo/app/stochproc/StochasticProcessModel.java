@@ -3,11 +3,11 @@ package ammon.thilo.app.stochproc;
 import java.util.TreeMap;
 import java.util.ArrayList;
 
-class StochProcessModel {
+class StochasticProcessModel {
     int dimension;
     ArrayList<RealisedValue> realisations;
 
-    StochProcessModel(int dimension) {
+    StochasticProcessModel(int dimension) {
         realisations = new ArrayList<RealisedValue>();
         this.dimension = dimension;
     }
@@ -20,7 +20,8 @@ class StochProcessModel {
         if (dimension != y.size()) {
             throw new IllegalArgumentException("Dimension mismatch");
         }
-        realisations.add(new RealisedValue(t, y));
+        RealisedValue realisedValue = new RealisedValue(t, y);
+        realisations.add(realisedValue);
     }
 
     public ArrayList<RealisedValue> getRealisations(){

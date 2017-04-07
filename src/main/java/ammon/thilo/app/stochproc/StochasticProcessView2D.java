@@ -9,9 +9,9 @@ import javafx.scene.chart.LineChart;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class StochProcessView2D extends LineChart<Number,Number>{
+class StochasticProcessView2D extends LineChart<Number,Number>{
   
-  StochProcessView2D(NumberAxis x, NumberAxis y){
+  StochasticProcessView2D(NumberAxis x, NumberAxis y){
     super(x,y);
     this.setCreateSymbols(false);
   }

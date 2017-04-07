@@ -7,9 +7,15 @@ import ammon.thilo.app.stochproc.StochProcessesController;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.scene.chart.XYChart;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
@@ -18,7 +24,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
 
 public class App extends Application {
-    StochProcessesController stctrl = new StochProcessesController(2);
+    StochProcessesController stctrl = new StochProcessesController();
 
     BorderPane bp = null;
 
@@ -40,18 +46,43 @@ public class App extends Application {
     }
 
     private void initComp() {
-        initRandomWalkFrame();
+        FlowPane btnsStochasticProcesses = new FlowPane();
+
+        btnsStochasticProcesses.setPadding(new Insets(5, 0, 5, 0));
+        btnsStochasticProcesses.setVgap(4);
+        btnsStochasticProcesses.setHgap(4);
+        btnsStochasticProcesses.setPrefWrapLength(170); // preferred width allows for two columns
+        btnsStochasticProcesses.setStyle("-fx-background-color: DAE6F3;");
+
+        ImageView pages[] = new ImageView[4];
+        final RandomWalkFrame rwFrame = new RandomWalkFrame(stctrl);
+        pages[0] = new ImageView(
+                    new Image(App.class.getResourceAsStream(
+                            "RandomWalk.png")));
+
+        pages[0].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                rwFrame.show();
+            }
+        });
+
+        btnsStochasticProcesses.getChildren().add(pages[0]);
+        bp.setLeft(btnsStochasticProcesses);
+
+
+
         final SimulationRunnable sim = new SimulationRunnable(stctrl, stctrl.getStochProcCtrls(),1);
         final Thread t = new Thread(sim);
         t.setDaemon(true);
 
         VBox vbox = new VBox();
 
-        Button btnStartSim = new Button();
+        final Button btnStartSim = new Button();
         btnStartSim.setText("Start simulation");
         btnStartSim.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
                 t.start();
+                btnStartSim.setDisable(true);
             }
         });
 
@@ -77,17 +108,4 @@ public class App extends Application {
         bp.setRight(vbox);
     }
 
-    public void initRandomWalkFrame(){
-        final RandomWalkFrame rwFrame = new RandomWalkFrame(stctrl);
-
-        final Button btnRandomWalk = new Button();
-        btnRandomWalk.setText("Add simple random walk");
-        btnRandomWalk.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e) {
-                rwFrame.show();
-            }
-        });
-        bp.setLeft(btnRandomWalk);
-
-    }
 }
