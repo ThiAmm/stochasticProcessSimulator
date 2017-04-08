@@ -13,12 +13,10 @@ import static java.lang.Double.compare;
  */
 public class RandomWalkController extends StochProcessController{
     RandomWalkModel rm = null;
-    ArrayList<RealisedValue> newRealisedValues;
 
     public RandomWalkController() {
         super();
         rm = new RandomWalkModel(1);
-        newRealisedValues = new ArrayList<RealisedValue>();
     }
 
     StochasticProcessModel getModel() {
@@ -29,6 +27,8 @@ public class RandomWalkController extends StochProcessController{
         if(time != 0){
             rm.addRealisation(time-Double.MIN_VALUE, getCurrentRealisation().getValue());
             newRealisedValues.add(new RealisedValue(time-Double.MIN_VALUE, getCurrentRealisation().getValue()));
+        }else{
+            return new RealisedValue(time,0);
         }
 
         double jump = RandomNumberGenerator.generateDiscreteFiniteRandomVariable(

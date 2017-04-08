@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22732235-0fcf-4fc6-a7f6-6fc2fdcef326" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/PoissonProcessController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/PoissonProcessFrame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/PoissonProcessModel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/MarkovProcessModel.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/MarkovProcessController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/ProbabilityFactory/RandomNumberGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/ProbabilityFactory/RandomNumberGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkFrame.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkModel.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessController.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochProcessController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochasticProcessModel.java" afterPath="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochasticProcessModel.java" />
     </list>
     <ignored path="stoch-process-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +29,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="277">
@@ -141,21 +129,21 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
-              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+              <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RandomWalkController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RandomWalkController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="359">
+              <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1345#1366#0" expanded="true" />
-                <element signature="e#1470#1485#0" expanded="true" />
+                <element signature="e#1298#1319#0" expanded="true" />
+                <element signature="e#1423#1438#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -251,7 +239,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/PoissonProcessModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/StochasticProcessModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/ProbabilityFactory/RandomNumberGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/PoissonProcessFrame.java" />
@@ -259,6 +246,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/PoissonProcessController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java" />
       </list>
     </option>
   </component>
@@ -877,14 +865,14 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.49806523" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.3217247" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.31840795" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.6384743" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.64179105" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.43117744" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.3615257" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20876826" sideWeight="0.35820895" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1009,10 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding>
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,10 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1137,12 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#234#235#0" expanded="false" />
-            <element signature="e#296#297#0" expanded="false" />
-            <element signature="e#345#346#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1166,10 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
-          <folding>
-            <element signature="e#1067#1068#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,10 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding>
-            <element signature="e#788#789#0" expanded="false" />
-            <element signature="e#835#836#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1196,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,10 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1267,19 +1227,19 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/Simulation/SimulationRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
-          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ammon/thilo/app/stochproc/RandomWalkController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="359">
+          <caret line="28" column="45" lean-forward="true" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1345#1366#0" expanded="true" />
-            <element signature="e#1470#1485#0" expanded="true" />
+            <element signature="e#1298#1319#0" expanded="true" />
+            <element signature="e#1423#1438#0" expanded="true" />
           </folding>
         </state>
       </provider>
