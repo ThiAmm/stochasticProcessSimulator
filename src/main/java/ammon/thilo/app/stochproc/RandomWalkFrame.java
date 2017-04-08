@@ -12,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class RandomWalkFrame extends Stage {
     StochProcessesController stochasticprocessesCtrl;

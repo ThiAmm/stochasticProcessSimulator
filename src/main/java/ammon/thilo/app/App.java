@@ -1,17 +1,13 @@
 package ammon.thilo.app;
 
-import ammon.thilo.app.stochproc.RandomWalkController;
 import ammon.thilo.app.Simulation.SimulationRunnable;
+import ammon.thilo.app.stochproc.PoissonProcessFrame;
 import ammon.thilo.app.stochproc.RandomWalkFrame;
 import ammon.thilo.app.stochproc.StochProcessesController;
-
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.geometry.Insets;
-import javafx.scene.chart.XYChart;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
@@ -21,11 +17,10 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
-import javafx.scene.layout.HBox;
 
 public class App extends Application {
     StochProcessesController stctrl = new StochProcessesController();
-
+    final static int timeBetweenSimulationPoints = 1;
     BorderPane bp = null;
 
     public static void main(String[] args) {
@@ -66,12 +61,24 @@ public class App extends Application {
             }
         });
 
+        final PoissonProcessFrame poissonProcessFrame = new PoissonProcessFrame(stctrl);
+        pages[1] = new ImageView(
+                new Image(App.class.getResourceAsStream(
+                        "PoissonProcess.png")));
+
+        pages[1].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                poissonProcessFrame.show();
+            }
+        });
+
         btnsStochasticProcesses.getChildren().add(pages[0]);
+        btnsStochasticProcesses.getChildren().add(pages[1]);
         bp.setLeft(btnsStochasticProcesses);
 
 
 
-        final SimulationRunnable sim = new SimulationRunnable(stctrl, stctrl.getStochProcCtrls(),1);
+        final SimulationRunnable sim = new SimulationRunnable(stctrl, stctrl.getStochProcCtrls(),timeBetweenSimulationPoints);
         final Thread t = new Thread(sim);
         t.setDaemon(true);
 

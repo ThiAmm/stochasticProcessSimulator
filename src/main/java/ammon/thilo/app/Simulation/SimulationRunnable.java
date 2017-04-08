@@ -26,7 +26,7 @@ public class SimulationRunnable implements Runnable {
         while(true) {
             while (!simulationPause) {
                 for (StochProcessController spCtrl : spsCtrls) {
-                    spCtrl.simulateNextPoint(time);
+                    spCtrl.createNewRealisedValue(time);
                 }
                 System.out.println("Simulation for time step done");
                 try {

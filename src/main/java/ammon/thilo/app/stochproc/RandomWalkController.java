@@ -11,9 +11,8 @@ import static java.lang.Double.compare;
 /**
  * Created by thilo on 07.09.16.
  */
-public class RandomWalkController implements StochProcessController{
+public class RandomWalkController extends StochProcessController{
     RandomWalkModel rm = null;
-    double currentValue = 0;
     ArrayList<RealisedValue> newRealisedValues;
 
     public RandomWalkController() {
@@ -22,45 +21,39 @@ public class RandomWalkController implements StochProcessController{
         newRealisedValues = new ArrayList<RealisedValue>();
     }
 
-    public void setJumpsProbsPair(ArrayList<Double> jumps, ArrayList<Double> probs) {
+    StochasticProcessModel getModel() {
+        return rm;
+    }
+
+    public RealisedValue simulateNextPoint(double time) {
+        if(time != 0){
+            rm.addRealisation(time-Double.MIN_VALUE, getCurrentRealisation().getValue());
+            newRealisedValues.add(new RealisedValue(time-Double.MIN_VALUE, getCurrentRealisation().getValue()));
+        }
+
+        double jump = RandomNumberGenerator.generateDiscreteFiniteRandomVariable(
+                rm.getJumpProbPairs());
+
+        return new RealisedValue(time, getCurrentRealisation().getValue().get(0) + jump);
+    }
+
+    public void setJumpsProbsPair(ArrayList<Double> jumps, ArrayList<Double> probabilities) {
         ArrayList<Pair<Double,Double>> jumpProbPairs = new ArrayList<Pair<Double,Double>>();
         for(int i = 0; i<jumps.size(); i++){
-            Pair<Double,Double> jumpProbPair = new Pair<Double,Double>(jumps.get(i),probs.get(i));
+            Pair<Double,Double> jumpProbPair = new Pair<Double,Double>(jumps.get(i),probabilities.get(i));
             jumpProbPairs.add(jumpProbPair);
         }
         rm.setJumpProbPairs(jumpProbPairs);
     }
 
-    public void validateJumpProbsPairs(ArrayList<Double> probs){
+    public void validateJumpProbsPairs(ArrayList<Double> probabilities){
         double prob = 0;
-        for(Double p : probs){
+        for(Double p : probabilities){
             prob = prob + p;
         }
         if(compare(prob,1)==0){
             throw new IllegalArgumentException("Probabilities have to sum up to one");
         }
-    }
-
-    public void simulateNextPoint(double time){
-        if(time != 0){
-            rm.addRealisation(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue));
-            newRealisedValues.add(new RealisedValue(time-Double.MIN_VALUE, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
-        }
-
-        double jump = RandomNumberGenerator.generateDiscreteFiniteRandomVariable(
-                rm.getJumpProbPairs());
-        currentValue = currentValue + jump;
-
-        rm.addRealisation(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue));
-        newRealisedValues.add(new RealisedValue(time, ArrayHelperFunctions.createArrayListFromDouble(currentValue)));
-    }
-
-    public void clearNewRealisedValues(){
-        newRealisedValues.clear();
-    }
-
-    public ArrayList<RealisedValue> getRealisedValues(){
-        return rm.getRealisations();
     }
 
     public String getTypeNameOfStochasticProcess(){
@@ -74,17 +67,5 @@ public class RandomWalkController implements StochProcessController{
             }
         }
         return true;
-    }
-
-    public void setId(int id){
-        rm.setId(id);
-    }
-
-    public int getId(){
-        return rm.getId();
-    }
-
-    public ArrayList<RealisedValue> getNewRealisedValues() {
-        return newRealisedValues;
     }
 }

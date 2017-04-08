@@ -25,7 +25,7 @@ public class RandomNumberGenerator {
         return generateUniformUnitRandomVariables(1).get(0);
     }
 
-    public static double generateExponentialRandomVariable(int theta){
+    public static double generateExponentialRandomVariable(double theta){
         return -theta*Math.log(generateUniformUnitRandomVariable());
     }
 
