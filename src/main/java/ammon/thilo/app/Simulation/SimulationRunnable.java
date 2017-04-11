@@ -28,7 +28,6 @@ public class SimulationRunnable implements Runnable {
                 for (StochProcessController spCtrl : spsCtrls) {
                     spCtrl.createNewRealisedValue(time);
                 }
-                System.out.println("Simulation for time step done");
                 try {
                     Thread.sleep(DELAYBETWEENVIEWUPDATESIMULATION);
                 } catch (InterruptedException e) {
