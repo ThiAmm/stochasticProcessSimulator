@@ -50,4 +50,17 @@ public class RandomNumberGenerator {
         }
         return valProbPairs.get(i).getKey();
     }
+
+    public static double generatePoissonDistributedRandomVariable(double theta){
+        double p = Math.exp(-theta);
+        double F = p;
+        int N = 0;
+        double u = generateUniformUnitRandomVariable();
+        while(u>F){
+            N++;
+            p = (p*theta)/N;
+            F = F + p;
+        }
+        return N;
+    }
 }

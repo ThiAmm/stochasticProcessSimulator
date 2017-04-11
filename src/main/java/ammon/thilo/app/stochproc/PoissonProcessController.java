@@ -26,7 +26,7 @@ public class PoissonProcessController extends MarkovProcessController {
             newRealisedValues.add(new RealisedValue(time-Double.MIN_VALUE, getCurrentRealisation().getValue()));
         }
         double timeDifference = time - currentRealisation.getTime();
-        double newValue = currentRealisation.getValue().get(0) + RandomNumberGenerator.generateExponentialRandomVariable(timeDifference*1.0/getLambda());
+        double newValue = currentRealisation.getValue().get(0) + RandomNumberGenerator.generatePoissonDistributedRandomVariable(timeDifference*1.0/getLambda());
         return new RealisedValue(time,newValue);
     }
 
