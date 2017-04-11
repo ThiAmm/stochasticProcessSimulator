@@ -32,6 +32,14 @@ abstract class StochasticProcessModel {
         return realisations;
     }
 
+    public RealisedValue getLatestRealisedValue(){
+        if(getRealisations().isEmpty()){
+            return null;
+        }else{
+            return getRealisations().get(getRealisations().size()-1);
+        }
+    }
+
     public int getId(){
         return Id;
     }

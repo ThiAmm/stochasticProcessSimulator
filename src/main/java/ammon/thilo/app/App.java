@@ -1,6 +1,7 @@
 package ammon.thilo.app;
 
 import ammon.thilo.app.Simulation.SimulationRunnable;
+import ammon.thilo.app.stochproc.BrownianMotionFrame;
 import ammon.thilo.app.stochproc.PoissonProcessFrame;
 import ammon.thilo.app.stochproc.RandomWalkFrame;
 import ammon.thilo.app.stochproc.StochProcessesController;
@@ -72,8 +73,21 @@ public class App extends Application {
             }
         });
 
+        final BrownianMotionFrame brownianMotionFrame = new BrownianMotionFrame(stctrl);
+        pages[2] = new ImageView(
+                new Image(App.class.getResourceAsStream(
+                        "BrownianMotion.png")));
+
+        pages[2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                brownianMotionFrame.show();
+            }
+        });
+
+
         btnsStochasticProcesses.getChildren().add(pages[0]);
         btnsStochasticProcesses.getChildren().add(pages[1]);
+        btnsStochasticProcesses.getChildren().add(pages[2]);
         bp.setLeft(btnsStochasticProcesses);
 
 
