@@ -1,7 +1,8 @@
 package ammon.thilo.app;
 
 import ammon.thilo.app.Simulation.SimulationRunnable;
-import ammon.thilo.app.stochproc.BrownianMotionFrame;
+import ammon.thilo.app.stochproc.BrownianMotion.BrownianMotionFrame;
+import ammon.thilo.app.stochproc.GeometricBrownianMotion.GeometricBrownianMotionFrame;
 import ammon.thilo.app.stochproc.PoissonProcessFrame;
 import ammon.thilo.app.stochproc.RandomWalkFrame;
 import ammon.thilo.app.stochproc.StochProcessesController;
@@ -21,7 +22,7 @@ import javafx.event.ActionEvent;
 
 public class App extends Application {
     StochProcessesController stctrl = new StochProcessesController();
-    final static int timeBetweenSimulationPoints = 1;
+    final static double timeBetweenSimulationPoints = 0.01;
     BorderPane bp = null;
 
     public static void main(String[] args) {
@@ -84,10 +85,23 @@ public class App extends Application {
             }
         });
 
+        final GeometricBrownianMotionFrame geometricBrownianMotionFrame = new GeometricBrownianMotionFrame(stctrl);
+        pages[3] = new ImageView(
+                new Image(App.class.getResourceAsStream(
+                        "GeometricBrownianMotion.png")));
+
+        pages[3].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                geometricBrownianMotionFrame.show();
+            }
+        });
+
 
         btnsStochasticProcesses.getChildren().add(pages[0]);
         btnsStochasticProcesses.getChildren().add(pages[1]);
         btnsStochasticProcesses.getChildren().add(pages[2]);
+        btnsStochasticProcesses.getChildren().add(pages[3]);
+
         bp.setLeft(btnsStochasticProcesses);
 
 

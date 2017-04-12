@@ -12,7 +12,7 @@ public class PoissonProcessController extends MarkovProcessController {
         poissonProcessModel = new PoissonProcessModel(1);
     }
 
-    StochasticProcessModel getModel() {
+    protected StochasticProcessModel getModel() {
         return poissonProcessModel;
     }
 
@@ -42,7 +42,7 @@ public class PoissonProcessController extends MarkovProcessController {
         return "Poisson process";
     }
 
-    boolean IsRealValuedProcess() {
+    public boolean IsRealValuedProcess() {
         return true;
     }
 }

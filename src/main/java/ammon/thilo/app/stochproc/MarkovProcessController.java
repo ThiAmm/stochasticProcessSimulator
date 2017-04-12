@@ -1,5 +1,5 @@
 package ammon.thilo.app.stochproc;
 
-abstract class MarkovProcessController extends StochProcessController {
+public abstract class MarkovProcessController extends StochProcessController {
 }
 

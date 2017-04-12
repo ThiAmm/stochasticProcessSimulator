@@ -9,12 +9,12 @@ import java.util.ArrayList;
  */
 public class RealisedValue extends State{
     double time;
-    RealisedValue(double time, ArrayList<Double> val){
+    public RealisedValue(double time, ArrayList<Double> val){
         super(val);
         this.time = time;
     }
 
-    RealisedValue(double time, double val){
+    public RealisedValue(double time, double val){
         super(ArrayHelperFunctions.createArrayListFromDouble(val));
         this.time = time;
     }

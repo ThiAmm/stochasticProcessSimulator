@@ -1,9 +1,11 @@
-package ammon.thilo.app.stochproc;
+package ammon.thilo.app.stochproc.BrownianMotion;
+
+import ammon.thilo.app.stochproc.StochasticProcessModel;
 
 /**
  * Created by thilo on 11.04.17.
  */
-public class BrownianMotionModel extends StochasticProcessModel{
+public class BrownianMotionModel extends StochasticProcessModel {
     private double mu;
     private double sigma;
 

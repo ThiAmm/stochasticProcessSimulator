@@ -1,5 +1,7 @@
-package ammon.thilo.app.stochproc;
+package ammon.thilo.app.stochproc.BrownianMotion;
 
+import ammon.thilo.app.stochproc.BrownianMotion.BrownianMotionController;
+import ammon.thilo.app.stochproc.StochProcessesController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;

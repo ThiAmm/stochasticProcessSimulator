@@ -1,18 +1,22 @@
-package ammon.thilo.app.stochproc;
+package ammon.thilo.app.stochproc.BrownianMotion;
 
 import ammon.thilo.app.ProbabilityFactory.RandomNumberGenerator;
+import ammon.thilo.app.stochproc.BrownianMotion.BrownianMotionModel;
+import ammon.thilo.app.stochproc.MarkovProcessController;
+import ammon.thilo.app.stochproc.RealisedValue;
+import ammon.thilo.app.stochproc.StochasticProcessModel;
 
 /**
  * Created by thilo on 11.04.17.
  */
-public class BrownianMotionController extends MarkovProcessController{
+public class BrownianMotionController extends MarkovProcessController {
     BrownianMotionModel brownianMotionModel = null;
 
-    BrownianMotionController(){
+    public BrownianMotionController(){
         brownianMotionModel = new BrownianMotionModel(1);
     }
 
-    StochasticProcessModel getModel() {
+    public StochasticProcessModel getModel() {
         return brownianMotionModel;
     }
 
@@ -31,7 +35,7 @@ public class BrownianMotionController extends MarkovProcessController{
         return "Brownian Motion";
     }
 
-    boolean IsRealValuedProcess() {
+    public boolean IsRealValuedProcess() {
         return true;
     }
 

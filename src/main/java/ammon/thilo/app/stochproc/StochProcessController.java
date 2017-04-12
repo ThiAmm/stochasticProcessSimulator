@@ -15,14 +15,15 @@ public abstract class StochProcessController {
         newRealisedValues = new ArrayList<RealisedValue>();
     }
 
-    abstract StochasticProcessModel getModel();
+    protected abstract StochasticProcessModel getModel();
 
     public abstract RealisedValue simulateNextPoint(double time);
 
-    public void createNewRealisedValue(double time){
+    public RealisedValue createNewRealisedValue(double time){
         RealisedValue newRealisation = simulateNextPoint(time);
         getModel().addRealisation(newRealisation);
         newRealisedValues.add(newRealisation);
+        return newRealisation;
     }
 
     public ArrayList<RealisedValue> getRealisedValues(){
@@ -39,7 +40,7 @@ public abstract class StochProcessController {
 
     public abstract String getTypeNameOfStochasticProcess();
 
-    abstract boolean IsRealValuedProcess();
+    public abstract boolean IsRealValuedProcess();
 
     public void setId(int id){
         getModel().setId(id);

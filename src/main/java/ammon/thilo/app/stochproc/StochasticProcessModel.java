@@ -3,11 +3,11 @@ package ammon.thilo.app.stochproc;
 import java.util.TreeMap;
 import java.util.ArrayList;
 
-abstract class StochasticProcessModel {
+public abstract class StochasticProcessModel {
     int dimension;
     ArrayList<RealisedValue> realisations = null;
     int Id;
-    StochasticProcessModel(int dimension) {
+    public StochasticProcessModel(int dimension) {
         realisations = new ArrayList<RealisedValue>();
         this.dimension = dimension;
     }

@@ -12,7 +12,7 @@ public class State implements Comparable<State>{
         dimension = value.size();
     }
 
-    ArrayList<Double> getValue(){
+    public ArrayList<Double> getValue(){
         return value;
     }
 

@@ -19,7 +19,7 @@ public class RandomWalkController extends StochProcessController{
         rm = new RandomWalkModel(1);
     }
 
-    StochasticProcessModel getModel() {
+    protected StochasticProcessModel getModel() {
         return rm;
     }
 
