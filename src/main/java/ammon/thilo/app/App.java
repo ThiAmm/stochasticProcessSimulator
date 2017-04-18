@@ -8,17 +8,22 @@ import ammon.thilo.app.stochproc.RandomWalkFrame;
 import ammon.thilo.app.stochproc.StochProcessesController;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class App extends Application {
     StochProcessesController stctrl = new StochProcessesController();
@@ -43,68 +48,7 @@ public class App extends Application {
     }
 
     private void initComp() {
-        FlowPane btnsStochasticProcesses = new FlowPane();
-
-        btnsStochasticProcesses.setPadding(new Insets(5, 0, 5, 0));
-        btnsStochasticProcesses.setVgap(4);
-        btnsStochasticProcesses.setHgap(4);
-        btnsStochasticProcesses.setPrefWrapLength(170); // preferred width allows for two columns
-        btnsStochasticProcesses.setStyle("-fx-background-color: DAE6F3;");
-
-        ImageView pages[] = new ImageView[4];
-        final RandomWalkFrame rwFrame = new RandomWalkFrame(stctrl);
-        pages[0] = new ImageView(
-                    new Image(App.class.getResourceAsStream(
-                            "RandomWalk.png")));
-
-        pages[0].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                rwFrame.show();
-            }
-        });
-
-        final PoissonProcessFrame poissonProcessFrame = new PoissonProcessFrame(stctrl);
-        pages[1] = new ImageView(
-                new Image(App.class.getResourceAsStream(
-                        "PoissonProcess.png")));
-
-        pages[1].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                poissonProcessFrame.show();
-            }
-        });
-
-        final BrownianMotionFrame brownianMotionFrame = new BrownianMotionFrame(stctrl);
-        pages[2] = new ImageView(
-                new Image(App.class.getResourceAsStream(
-                        "BrownianMotion.png")));
-
-        pages[2].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                brownianMotionFrame.show();
-            }
-        });
-
-        final GeometricBrownianMotionFrame geometricBrownianMotionFrame = new GeometricBrownianMotionFrame(stctrl);
-        pages[3] = new ImageView(
-                new Image(App.class.getResourceAsStream(
-                        "GeometricBrownianMotion.png")));
-
-        pages[3].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent event) {
-                geometricBrownianMotionFrame.show();
-            }
-        });
-
-
-        btnsStochasticProcesses.getChildren().add(pages[0]);
-        btnsStochasticProcesses.getChildren().add(pages[1]);
-        btnsStochasticProcesses.getChildren().add(pages[2]);
-        btnsStochasticProcesses.getChildren().add(pages[3]);
-
-        bp.setLeft(btnsStochasticProcesses);
-
-
+        bp.setLeft(createButtonsStochasticProcesses());
 
         final SimulationRunnable sim = new SimulationRunnable(stctrl, stctrl.getStochProcCtrls(),timeBetweenSimulationPoints);
         final Thread t = new Thread(sim);
@@ -141,6 +85,77 @@ public class App extends Application {
         vbox.getChildren().addAll(btnStartSim, pauseSimulation, continueSimulation);
 
         bp.setRight(vbox);
+
+        HBox bottomBox = new HBox();
+        TreeItem<String> treeItemMarkovProcesses =
+                new TreeItem<String>("Markov processes");
+        TreeItem<String> treeItemOtherProcesses =
+                new TreeItem<String>("Other processes");
+        TreeView<String> treeViewStochasticProcesses = new TreeView<String>(new TreeItem<String>("Stochastic Processes"));
+        treeViewStochasticProcesses.getRoot().getChildren().addAll(treeItemMarkovProcesses, treeItemOtherProcesses);
+        TextArea taInformation = new TextArea();
+        taInformation.setPrefRowCount(10);
+        bottomBox.getChildren().addAll(treeViewStochasticProcesses,taInformation);
+        bottomBox.setPrefHeight(250);
+        bp.setBottom(bottomBox);
     }
 
+    private FlowPane createButtonsStochasticProcesses() {
+        FlowPane btnsStochasticProcesses = new FlowPane();
+
+        btnsStochasticProcesses.setPadding(new Insets(5, 0, 5, 0));
+        btnsStochasticProcesses.setVgap(4);
+        btnsStochasticProcesses.setHgap(4);
+        btnsStochasticProcesses.setPrefWrapLength(170); // preferred width allows for two columns
+        btnsStochasticProcesses.setStyle("-fx-background-color: DAE6F3;");
+
+        final ArrayList<ButtonStochasticProcess> fileNamesButtons = new ArrayList<ButtonStochasticProcess>();
+        fileNamesButtons.add(new ButtonStochasticProcess("RandomWalk.png", RandomWalkFrame.class));
+        fileNamesButtons.add(new ButtonStochasticProcess("PoissonProcess.png", PoissonProcessFrame.class));
+        fileNamesButtons.add(new ButtonStochasticProcess("BrownianMotion.png", BrownianMotionFrame.class));
+        fileNamesButtons.add(new ButtonStochasticProcess("GeometricBrownianMotion.png", GeometricBrownianMotionFrame.class));
+
+        ImageView pages[] = new ImageView[fileNamesButtons.size()];
+        for (int i = 0; i < fileNamesButtons.size(); i++) {
+            pages[i] = createImageViewWithIcon(fileNamesButtons.get(i).getFileName());
+            final Class<? extends Stage> cls = fileNamesButtons.get(i).getCls();
+            pages[i].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    try {
+                        cls.newInstance().show();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            btnsStochasticProcesses.getChildren().add(pages[i]);
+        }
+        return btnsStochasticProcesses;
+    }
+
+    private ImageView createImageViewWithIcon(String fileName){
+        return new ImageView(
+                new Image(App.class.getResourceAsStream(
+                        fileName)));
+
+    }
+
+    public class ButtonStochasticProcess{
+        String fileName;
+        Class<? extends Stage> cls;
+        public ButtonStochasticProcess(String fileName, Class<? extends Stage> clsStochasticProcessFrame) {
+            this.fileName = fileName;
+            this.cls = clsStochasticProcessFrame;
+        }
+
+        public String getFileName() {
+            return fileName;
+        }
+
+        public Class<? extends Stage> getCls() {
+            return cls;
+        }
+    }
 }
