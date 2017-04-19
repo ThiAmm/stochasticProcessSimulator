@@ -22,11 +22,9 @@ import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class App extends Application {
-    StochProcessesController stctrl = new StochProcessesController();
+    final StochProcessesController stctrl = new StochProcessesController();
     final static double timeBetweenSimulationPoints = 0.01;
     BorderPane bp = null;
 
@@ -110,24 +108,18 @@ public class App extends Application {
         btnsStochasticProcesses.setStyle("-fx-background-color: DAE6F3;");
 
         final ArrayList<ButtonStochasticProcess> fileNamesButtons = new ArrayList<ButtonStochasticProcess>();
-        fileNamesButtons.add(new ButtonStochasticProcess("RandomWalk.png", RandomWalkFrame.class));
-        fileNamesButtons.add(new ButtonStochasticProcess("PoissonProcess.png", PoissonProcessFrame.class));
-        fileNamesButtons.add(new ButtonStochasticProcess("BrownianMotion.png", BrownianMotionFrame.class));
-        fileNamesButtons.add(new ButtonStochasticProcess("GeometricBrownianMotion.png", GeometricBrownianMotionFrame.class));
+        fileNamesButtons.add(new ButtonStochasticProcess("RandomWalk.png", new RandomWalkFrame(stctrl)));
+        fileNamesButtons.add(new ButtonStochasticProcess("PoissonProcess.png", new PoissonProcessFrame(stctrl)));
+        fileNamesButtons.add(new ButtonStochasticProcess("BrownianMotion.png", new BrownianMotionFrame(stctrl)));
+        fileNamesButtons.add(new ButtonStochasticProcess("GeometricBrownianMotion.png", new GeometricBrownianMotionFrame(stctrl)));
 
         ImageView pages[] = new ImageView[fileNamesButtons.size()];
         for (int i = 0; i < fileNamesButtons.size(); i++) {
             pages[i] = createImageViewWithIcon(fileNamesButtons.get(i).getFileName());
-            final Class<? extends Stage> cls = fileNamesButtons.get(i).getCls();
+            final Stage stochasticProcessCreatorFrame = fileNamesButtons.get(i).getStochasticProcessCreatorFrame();
             pages[i].setOnMouseClicked(new EventHandler<MouseEvent>() {
                 public void handle(MouseEvent event) {
-                    try {
-                        cls.newInstance().show();
-                    } catch (InstantiationException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
+                     stochasticProcessCreatorFrame.show();
                 }
             });
             btnsStochasticProcesses.getChildren().add(pages[i]);
@@ -144,18 +136,18 @@ public class App extends Application {
 
     public class ButtonStochasticProcess{
         String fileName;
-        Class<? extends Stage> cls;
-        public ButtonStochasticProcess(String fileName, Class<? extends Stage> clsStochasticProcessFrame) {
+        Stage stochasticProcessCreatorFrame;
+        public ButtonStochasticProcess(String fileName, Stage stochasticProcessCreatorFrame) {
             this.fileName = fileName;
-            this.cls = clsStochasticProcessFrame;
+            this.stochasticProcessCreatorFrame = stochasticProcessCreatorFrame;
         }
 
         public String getFileName() {
             return fileName;
         }
 
-        public Class<? extends Stage> getCls() {
-            return cls;
+        public Stage getStochasticProcessCreatorFrame() {
+            return stochasticProcessCreatorFrame;
         }
     }
 }
